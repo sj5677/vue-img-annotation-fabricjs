@@ -1,0 +1,23 @@
+{
+  "name": "sj-img-annotation-poc",
+  "version": "0.1.0",
+  "description": "Image annotation POC (fabric.js) mirroring sls-frontend-vle drawing tool",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@carbon/icons-vue": "^10.130.0",
+    "@carbon/vue": "^3.0.32",
+    "fabric": "^7.4.0",
+    "vue": "^3.5.41"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.8",
+    "typescript": "^6.0.3",
+    "vite": "^8.2.2",
+    "vue-tsc": "^3.3.11"
+  }
+}
