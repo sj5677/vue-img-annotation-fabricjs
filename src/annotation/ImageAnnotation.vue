@@ -71,6 +71,7 @@ import {
   loadAnnotations,
   saveAnnotation,
 } from "@/annotation/storage";
+import { DEFAULT_ANNOTATIONS } from "@/annotation/defaultAnnotations";
 import type { AnnotationSaveResult, SavedAnnotation } from "@/annotation/types";
 
 const props = withDefaults(
@@ -93,7 +94,18 @@ const renderKey = ref(0);
 const imageKey = computed(() => props.imageUrl);
 
 onMounted(() => {
-  annotations.value = loadAnnotations(imageKey.value);
+  const saved = loadAnnotations(imageKey.value);
+  if (saved.length === 0) {
+    const defaults = DEFAULT_ANNOTATIONS[imageKey.value];
+    if (defaults?.length) {
+      defaults.forEach((annotation) =>
+        saveAnnotation(imageKey.value, annotation),
+      );
+      annotations.value = defaults;
+      return;
+    }
+  }
+  annotations.value = saved;
 });
 
 function startEditing() {
