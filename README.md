@@ -2,6 +2,8 @@
 
 A proof-of-concept Vue 3 app for drawing annotations on top of images using [fabric.js](http://fabrijs.com/).
 
+**Live demo:** https://vue-img-annotation-fabricjs.vercel.app/
+
 ## What it does
 
 - Displays a page with two sample images (cat and duck), each with its own annotation toolbar.
